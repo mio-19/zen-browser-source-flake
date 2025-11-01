@@ -6,12 +6,11 @@ on:
       release_tag:
         description: "Release tag to simulate"
         required: true
-        default: "1.0.1-a.19"
+        default: "1.17.4b"
 
 jobs:
   update-versions:
     runs-on: ubuntu-latest
-    if: contains(inputs.release_tag, 'a')
 
     steps:
       - name: Check out repository
