@@ -27,9 +27,7 @@
             zen-browser-unwrapped = pkgs.callPackage ./zen-browser-unwrapped.nix {
               inherit version firefoxVersion;
             };
-            zen-browser = builtins.warn ''
-              This flake is deprecated, please use https://github.com/youwen5/zen-browser-flake.
-            '' (pkgs.callPackage ./zen-browser.nix { inherit zen-browser-unwrapped; });
+            zen-browser = (pkgs.callPackage ./zen-browser.nix { inherit zen-browser-unwrapped; });
             default = zen-browser;
           };
         };
