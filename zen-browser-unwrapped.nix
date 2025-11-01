@@ -161,8 +161,8 @@ let
   firefox-l10n = fetchFromGitHub {
     owner = "mozilla-l10n";
     repo = "firefox-l10n";
-    rev = "9d639cd79d6b73081fadb3474dd7d73b89732e7b";
-    hash = "sha256-+2JCaPp+c2BRM60xFCeY0pixIyo2a3rpTPaSt1kTfDw=";
+    rev = "cb78eda133a3a962ebac181a94bc3480017bca92";
+    hash = "sha256-+XdVM8bPg5Ro3Nuuo4ljpbPZt3TC7emdLdMKURx0GnY=";
   };
   disableAVX = if stdenv.hostPlatform.system == "aarch64-linux" then "--disable-wasm-avx" else "";
 in
@@ -382,6 +382,7 @@ buildStdenv.mkDerivation (finalAttrs: {
   '';
 
   preBuild = ''
+    mkdir -p l10n
     cp -r ${firefox-l10n} l10n/firefox-l10n
 
     for lang in $(cat ./l10n/supported-languages); do
