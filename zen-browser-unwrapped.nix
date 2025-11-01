@@ -436,6 +436,7 @@ buildStdenv.mkDerivation (finalAttrs: {
     # These values are used by `wrapFirefox`.
     # ref; `pkgs/applications/networking/browsers/firefox/wrapper.nix'
     binaryName = finalAttrs.meta.mainProgram;
+    applicationName = "Zen Browser";
     inherit alsaSupport;
     inherit jackSupport;
     inherit pipewireSupport;
