@@ -373,7 +373,7 @@ buildStdenv.mkDerivation (finalAttrs: {
     export WASM_CXX=${wasi32.stdenv.cc}/bin/${wasi32.stdenv.cc.targetPrefix}c++
 
     export ZEN_RELEASE=1
-    surfer ci --brand alpha --display-version ${finalAttrs.version}
+    surfer ci --brand release --display-version ${finalAttrs.version}
 
     install -D ${finalAttrs.firefoxSrc} .surfer/engine/firefox-${finalAttrs.firefoxVersion}.source.tar.xz
     surfer download
