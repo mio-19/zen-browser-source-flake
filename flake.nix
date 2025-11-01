@@ -15,8 +15,8 @@
       ];
       perSystem =
         let
-          version = "1.0.1-a.19";
-          firefoxVersion = "132.0.1";
+          version = "1.17.4b";
+          firefoxVersion = "144.0.2";
         in
         {
           pkgs,
