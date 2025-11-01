@@ -16,11 +16,6 @@ jobs:
         run: |
           RELEASE_TAG=$(curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest | jq -r .tag_name)
 
-          # Check if the tag contains the letter 'a'
-          if [[ "$RELEASE_TAG" != *a* ]]; then
-            exit 1
-          fi
-
           # Save tag as an output (optional)
           echo "release_tag=$RELEASE_TAG" >> $GITHUB_ENV
 
