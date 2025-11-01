@@ -112,23 +112,20 @@
 let
   surfer = buildNpmPackage {
     pname = "surfer";
-    version = "1.5.0";
+    version = "1.11.22";
 
     src = fetchFromGitHub {
       owner = "zen-browser";
       repo = "surfer";
-      rev = "50af7094ede6e9f0910f010c531f8447876a6464";
-      hash = "sha256-wmAWg6hoICNHfoXJifYFHmyFQS6H22u3GSuRW4alexw=";
+      rev = "0f163403d3a056ce4af586ed6f0e8b85bdffd411";
+      hash = "sha256-1V/LbdhEgFh9zGjyaTl7tDPiWJA89ZPnUkY48A0XfAA=";
     };
 
     patches = [
-      (fetchpatch {
-        url = "https://github.com/youwen5/nixpkgs/raw/refs/heads/zen-browser-latest/pkgs/by-name/ze/zen-browser-unwrapped/surfer-dont-check-update.patch";
-        hash = "sha256-CC8+hw6p8Mf9XGaLcerAmbfrIWffuMsy7tx81IBYEps=";
-      })
+      ./surfer-dont-check-update.patch
     ];
 
-    npmDepsHash = "sha256-p0RVqn0Yfe0jxBcBa/hYj5g9XSVMFhnnZT+au+bMs18=";
+    npmDepsHash = "sha256-H0D9d2eQhYSWiDZLXOCL1ave+WtUioavYv474V9P+68=";
     makeCacheWritable = true;
 
     SHARP_IGNORE_GLOBAL_LIBVIPS = false;
